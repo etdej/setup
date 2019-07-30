@@ -1,0 +1,16 @@
+[alias]
+  co=checkout
+  ci=commit
+  br=branch
+  st=status
+  k=!gitk --all
+
+[user]
+  name = etienne
+  email = e.dejoie@drishti.com
+
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
