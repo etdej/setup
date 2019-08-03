@@ -36,3 +36,4 @@ sudo mkdir -p /mnt/data
 sudo mount -o discard,defaults /dev/sdb /mnt/data
 sudo chmod a+w /mnt/data
 
+sh ./install_nvidia_driver.sh
