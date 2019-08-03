@@ -11,7 +11,7 @@ sudo apt-get update && sudo apt-get install google-cloud-sdk
 
 cd /tmp
 curl -O https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
-echo "export PATH=$PATH:/home/sammy/anaconda3/bin"
+echo "export PATH=$PATH:/home/sammy/anaconda3/bin" >> ~/.zhrc
 source ~/.zshrc
 conda create --name drishti3  python=3.7
 conda activate drishti3
@@ -19,6 +19,12 @@ conda install pytorch
 conda install jupyter
 conda install opencv-python
 pip install protobuf
+jupyter notebook --generate-config
+echo "c = get_config()" >> ~/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.ip = '*'" >> ~/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.open_browser = False" >> ~/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.port = 5000" >> ~/.jupyter/jupyter_notebook_config.py
+
 
 # Create 
 cp bashrc ~/.bashrc
